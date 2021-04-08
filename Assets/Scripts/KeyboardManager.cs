@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KeyboardManager : MonoBehaviour
@@ -9,6 +6,8 @@ public class KeyboardManager : MonoBehaviour
 
     private bool[] keys = new bool[4];
 
+    #region --- Delegates ---
+
     public delegate void MoveDelegate(bool[] keys);
     public MoveDelegate MoveEvent;
 
@@ -16,6 +15,10 @@ public class KeyboardManager : MonoBehaviour
     {
         instance = this;
     }
+
+    #endregion
+
+    #region --- Unity methods ---
 
     private void Update()
     {
@@ -39,6 +42,10 @@ public class KeyboardManager : MonoBehaviour
         SendPress();
     }
 
+    #endregion
+
+    #region --- Private methods ---
+
     private void SendPress()
     {
         if (keys[0] || keys[1] || keys[2] || keys[3])
@@ -56,4 +63,7 @@ public class KeyboardManager : MonoBehaviour
             keys[i] = false;
         }
     }
+
+    #endregion
+
 }

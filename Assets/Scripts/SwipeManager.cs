@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class SwipeManager : MonoBehaviour
@@ -8,15 +6,11 @@ public class SwipeManager : MonoBehaviour
     public static SwipeManager instance;
     private const float SWIPE_THRESHOLD = 50;
 
-    #region --- Private fields ---
-
     private Vector2 startTouch;
     private bool touchMoved;
     private Vector2 swipeDelta;
 
     private bool[] swipes = new bool[4];
-
-    #endregion
 
     #region --- Delegates ---
 

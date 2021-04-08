@@ -1,26 +1,23 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
 {
-    #region --- Public fields ---
+    public static RoadGenerator instance;
     
     public GameObject RoadPrefab;
-
-    #endregion
-
-    #region --- Private fields ---
 
     private List<GameObject> roads = new List<GameObject>();
     private float maxSpeed = 10;
     private float speed = 0;
     private int maxRoadCount = 5;
 
-    #endregion
-
     #region --- Unity methods ---
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -28,7 +25,7 @@ public class RoadGenerator : MonoBehaviour
         // StartLevel();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (speed == 0)
         {
