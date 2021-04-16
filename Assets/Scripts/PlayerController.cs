@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Vector3 startPosition;
     private Quaternion startRotation;
-    private float laneOffset = 2.5f;
+    private float laneOffset = 1.5f;
     private float laneChangeSpeed = 15;
     private Rigidbody rb;
     private float startPoint;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartGame()
     {
-        RoadGenerator.instance.StartLevel();
+        CorridorGenerator.instance.StartLevel();
     }
 
     public void ResetGame()
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
         finishPoint = 0;
         transform.position = startPosition;
         transform.rotation = startRotation;
-        RoadGenerator.instance.ResetLevel();
+        CorridorGenerator.instance.ResetLevel();
     }
 
     #endregion
